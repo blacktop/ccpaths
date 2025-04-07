@@ -25,6 +25,8 @@ Simple utility to fix a common annoyance with building a `compile_commands.json`
 go install github.com/blacktop/ccpaths@latest
 ```
 
+Or download the latest [release](https://github.com/blacktop/ccpaths/releases/latest)
+
 ### Running
 
 To replace all the source paths in the JSON with the corrected *local* paths
