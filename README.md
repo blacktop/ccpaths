@@ -1,6 +1,5 @@
 <p align="center">
   <a href="https://github.com/blacktop/ccpaths"><img alt="ccpaths Logo" src="https://raw.githubusercontent.com/blacktop/ccpaths/main/docs/logo.png" height="200" /></a>
-  <h1 align="center">ccpaths</h1>
   <h4><p align="center">Update <code>compile_commands.json</code> source code paths</p></h4>
   <p align="center">
     <a href="https://github.com/blacktop/ccpaths/actions" alt="Actions">
@@ -16,7 +15,7 @@
 
 ## Why? 🤔
 
-Simple utility to fix a common annoyance with building a compile_commands.json in a CI server and then trying to use it locally.
+Simple utility to fix a common annoyance with building a `compile_commands.json` in a CI server and then trying to use it locally.
 
 ## Getting Started
 
