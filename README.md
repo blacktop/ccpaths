@@ -1,7 +1,7 @@
 <p align="center">
-  <a href="https://github.com/blacktop/ccpaths"><img alt="ccpaths Logo" src="https://raw.githubusercontent.com/blacktop/ccpaths/main/docs/logo.webp" /></a>
+  <a href="https://github.com/blacktop/ccpaths"><img alt="ccpaths Logo" src="https://raw.githubusercontent.com/blacktop/ccpaths/main/docs/logo.png" height="200" /></a>
   <h1 align="center">ccpaths</h1>
-  <h4><p align="center">Go Project Template</p></h4>
+  <h4><p align="center">Update <code>compile_commands.json</code> source code paths</p></h4>
   <p align="center">
     <a href="https://github.com/blacktop/ccpaths/actions" alt="Actions">
           <img src="https://github.com/blacktop/ccpaths/actions/workflows/go.yml/badge.svg" /></a>
@@ -16,7 +16,7 @@
 
 ## Why? 🤔
 
-<!-- Fill this out -->
+Simple utility to fix a common annoyance with building a compile_commands.json in a CI server and then trying to use it locally.
 
 ## Getting Started
 
@@ -26,9 +26,13 @@
 go install github.com/blacktop/ccpaths@latest
 ```
 
-<!-- Fill this out -->
+### Running
 
-![demo](vhs.gif)
+To replace all the source paths in the JSON with the corrected *local* paths
+
+```bash
+❱ ccpaths compile_commands.json /path/to/target /path/in/db
+```
 
 ## License
 
