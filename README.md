@@ -1,8 +1,8 @@
 <p align="center">
   <picture>
-  <source media="(prefers-color-scheme: dark)" srcset="docs/logo-dark.png">
-  <source media="(prefers-color-scheme: light)" srcset="docs/logo-light.png">
-  <img alt="Fallback logo" src="docs/logo-dark.png">
+  <source media="(prefers-color-scheme: dark)" srcset="docs/logo-dark.png" height="400">
+  <source media="(prefers-color-scheme: light)" srcset="docs/logo-light.png" height="400">
+  <img alt="Fallback logo" src="docs/logo-dark.png" height="400">
 </picture>
 
   <h4><p align="center">Update <code>compile_commands.json</code> source code paths</p></h4>
