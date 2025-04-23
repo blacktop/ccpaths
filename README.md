@@ -1,5 +1,10 @@
 <p align="center">
-  <a href="https://github.com/blacktop/ccpaths"><img alt="ccpaths Logo" src="https://raw.githubusercontent.com/blacktop/ccpaths/main/docs/logo.png" height="400" /></a>
+  <picture>
+  <source media="(prefers-color-scheme: dark)" srcset="docs/logo-dark.png">
+  <source media="(prefers-color-scheme: light)" srcset="docs/logo-light.png">
+  <img alt="Fallback logo" src="docs/logo-dark.png">
+</picture>
+
   <h4><p align="center">Update <code>compile_commands.json</code> source code paths</p></h4>
   <p align="center">
     <a href="https://github.com/blacktop/ccpaths/actions" alt="Actions">
