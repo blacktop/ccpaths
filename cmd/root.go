@@ -66,7 +66,7 @@ func init() {
 	logger.SetStyles(styles)
 
 	// Define CLI flags
-	rootCmd.PersistentFlags().BoolVarP(&verbose, "verbose", "v", false, "Enable verbose debug logging")
+	rootCmd.PersistentFlags().BoolVarP(&verbose, "verbose", "V", false, "Enable verbose debug logging")
 }
 
 // rootCmd represents the base command when called without any subcommands
@@ -98,18 +98,25 @@ This command will read the compile_commands.json file, update the paths based on
 			return fmt.Errorf("failed to parse compile commands JSON: %w", err)
 		}
 
-		logger.Debug("Successfully parsed compile commands", "count", len(ccdb))
+		log.Debug("Successfully parsed compile commands", "count", len(ccdb))
 
 		// Process the second argument (likely the target path)
 		targetPath := filepath.Clean(args[1])
-		logger.Debug("Target path", "path", targetPath)
+		dbPath := filepath.Clean(args[2])
+		log.Debug("Target path", "path", targetPath)
 
 		// Now we have the compile commands loaded and ready to update paths
 		for i, cc := range ccdb {
-			ccdb[i].Directory = strings.Replace(cc.Directory, targetPath, "", -1)
-			ccdb[i].File = strings.Replace(cc.File, targetPath, "", -1)
+			if rest, ok := strings.CutPrefix(cc.Directory, targetPath); ok {
+				ccdb[i].Directory = filepath.Join(dbPath, rest)
+			}
+			if rest, ok := strings.CutPrefix(cc.File, targetPath); ok {
+				ccdb[i].File = filepath.Join(dbPath, rest)
+			}
 			for j, arg := range cc.Arguments {
-				ccdb[i].Arguments[j] = strings.Replace(arg, targetPath, "", -1)
+				if rest, ok := strings.CutPrefix(arg, targetPath); ok {
+					ccdb[i].Arguments[j] = filepath.Join(dbPath, rest)
+				}
 			}
 		}
 

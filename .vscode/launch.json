@@ -14,6 +14,20 @@
             "port": 2345,
             "host": "127.0.0.1",
             "preLaunchTask": "Run headless dlv" // Here !
-        }
+        },
+        {
+            "name": "ccpaths",
+            "type": "go",
+            "request": "launch",
+            "mode": "debug",
+            "program": "${workspaceRoot}/main.go",
+            "args": [
+                "-V",
+                "compile_commands.json",
+                "/Users/runner/work/darwin-xnu-build/darwin-xnu-build",
+                "/Users/blacktop/Developer/Github/apple-oss-distributions",
+            ],
+            "showLog": false
+        },
     ]
 }
