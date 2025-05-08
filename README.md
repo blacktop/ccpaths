@@ -40,6 +40,17 @@ To replace all the source paths in the JSON with the corrected *local* paths
 ❱ ccpaths compile_commands.json /path/to/target /path/in/db
 ```
 
+### Example
+
+```bash
+git clone https://github.com/apple-oss-distributions/xnu.git ~/dev/apple/xnu
+cd ~/dev/apple/xnu
+wget https://github.com/blacktop/darwin-xnu-build/releases/download/v15.4/xnu-15.4-jsondb.zip
+unzip xnu-15.4-jsondb.zip
+rm xnu-15.4-jsondb.zip
+ccpaths compile_commands.json /Users/runner/work/darwin-xnu-build/darwin-xnu-build ~/dev/apple
+```
+
 ## License
 
 MIT Copyright (c) 2025 **blacktop**
